@@ -16,16 +16,36 @@ function task2($act, ...$numbers)
     if (count($numbers) > 1) {
         switch ($act) {
             case '+':
-                echo add(...$numbers);
+                $result = 0;
+                foreach ($numbers as $num) {
+                    $result += $num;
+                }
+                return $result;
                 break;
             case '-':
-                echo subtract(...$numbers);
+                $n = $numbers[0];
+                for ($i = 0; $i < count($numbers); $i++) {
+                    $n -= $numbers[$i+1];
+                }
+                return $n;
                 break;
             case '/':
-                echo divide(...$numbers);
+                $n = $numbers[0];
+                for ($i = 0; $i < count($numbers); $i++) {
+                    if (isset($numbers[$i+1])) {
+                        $n = $n / $numbers[$i+1];
+                    }
+                }
+                return $n;
                 break;
             case '*':
-                echo multiply(...$numbers);
+                $n = $numbers[0];
+                for ($i = 0; $i < count($numbers); $i++) {
+                    if (isset($numbers[$i+1])) {
+                        $n = $n * $numbers[$i+1];
+                    }
+                }
+                return $n;
                 break;
             default:
                 echo "The action does not exist";
@@ -89,45 +109,4 @@ function task8($file)
 
     echo $content;
 
-}
-
-/* Helper functions for task3 */
-function subtract(...$numbers)
-{
-    $n = $numbers[0];
-    for ($i = 0; $i < count($numbers); $i++) {
-        $n -= $numbers[$i+1];
-    }
-    return $n;
-}
-
-function add(...$numbers)
-{
-    $result = 0;
-    foreach ($numbers as $num) {
-        $result += $num;
-    }
-    return $result;
-}
-
-function divide(...$numbers)
-{
-    $n = $numbers[0];
-    for ($i = 0; $i < count($numbers); $i++) {
-        if (isset($numbers[$i+1])) {
-            $n = $n / $numbers[$i+1];
-        }
-    }
-    return $n;
-}
-
-function multiply(...$numbers)
-{
-    $n = $numbers[0];
-    for ($i = 0; $i < count($numbers); $i++) {
-        if (isset($numbers[$i+1])) {
-            $n = $n * $numbers[$i+1];
-        }
-    }
-    return $n;
 }

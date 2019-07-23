@@ -4,13 +4,13 @@ require "src/functions.php";
 
 task1(["str1","str2","str3","str4"], true);
 echo '<br>';
-task2("+", 1, 2, 3);
+echo task2("+", 1, 2, 3);
 echo '<br>';
-task2("-", 1, 1, 1);
+echo task2("-", 1, 1, 1);
 echo '<br>';
-task2("/", 8, 2, 2);
+echo task2("/", 8, 2, 2);
 echo '<br>';
-task2("*", 3, 3, 3);
+echo task2("*", 3, 3, 3);
 echo '<br>';
 task3(8,8);
 task4();
