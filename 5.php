@@ -29,8 +29,6 @@ $cars = [
 
 foreach ($cars as $name => $car) {
     echo "CAR name: ${name} <br>";
-    foreach ($car as $v) {
-        echo " ${v} ";
-    }
+    echo implode(" ", $car);
     echo "<br>";
 }
