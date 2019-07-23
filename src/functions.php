@@ -57,18 +57,22 @@ function task2($act, ...$numbers)
     }
 }
 
-function task3($start, $end)
+function task3($cols, $rows)
 {
-    echo '<table border="1">';
+    if ($cols >= 1 and $rows > 1) {
+        echo '<table border="1">';
 
-    for ($i = 1; $i <= $start; $i++) {
-        echo "<tr>";
-        for ($j = 1; $j <= $end; $j++) {
-            echo "<td>${j} x ${i} = " . $j * $i . "</td>";
+        for ($i = 1; $i <= $cols; $i++) {
+            echo "<tr>";
+            for ($j = 1; $j <= $rows; $j++) {
+                echo "<td>${j} x ${i} = " . $j * $i . "</td>";
+            }
+            echo "</tr>";
         }
-        echo "</tr>";
+        echo '</table>';
+    } else {
+        echo "The entered numbers are incorrect";
     }
-    echo '</table>';
 
 }
 
